@@ -8,4 +8,4 @@ WORKDIR /app
 RUN mkdir -p /app/logs
 COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "--enable-native-access=ALL-UNNAMED", "-jar", "app.jar"]
